@@ -57,6 +57,7 @@ class TasksController extends Controller
         // メッセージを作成
         $task = new Task;
         $task->status = $request->status;    // 追加
+        $task->user_id = $userId = \Auth::id();    // 追加
         $task->content = $request->content;
         $task->save();
 
